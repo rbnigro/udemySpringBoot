@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ronneynigro.bookstoremanager.dto.BookDTO;
 import com.ronneynigro.bookstoremanager.dto.MessageResponseDTO;
+import com.ronneynigro.bookstoremanager.repository.BookRepository;
 import com.ronneynigro.bookstoremanager.service.BookService;
 
 @RestController
@@ -25,6 +26,9 @@ public class BookController {
 	
 	@PostMapping
 	public MessageResponseDTO create(@RequestBody @Valid BookDTO bookDTO) {
-		return bookService.create(bookDTO);
+		//return bookService.create(bookDTO);
+		return MessageResponseDTO.builder()
+				.message("criou")
+				.build();
 	}
 }
