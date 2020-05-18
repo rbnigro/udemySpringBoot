@@ -21,7 +21,7 @@ public class Book {
 	private String name;
 	
 	@Column(nullable = false)
-	private Integer page;
+	private Integer pages;
 	
 	@Column(nullable = false)
 	private Integer chapters;
@@ -36,12 +36,12 @@ public class Book {
 	@JoinColumn(name = "author_id")
 	private Author author;
 	
-	public Book(Long id, String name, Integer page, Integer chapters, String isbn, String publisherName,
+	public Book(Long id, String name, Integer pages, Integer chapters, String isbn, String publisherName,
 			Author author) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.page = page;
+		this.pages = pages;
 		this.chapters = chapters;
 		this.isbn = isbn;
 		this.publisherName = publisherName;
@@ -64,12 +64,12 @@ public class Book {
 		this.name = name;
 	}
 
-	public Integer getPage() {
-		return page;
+	public Integer getPages() {
+		return pages;
 	}
 
-	public void setPage(Integer page) {
-		this.page = page;
+	public void setPage(Integer pages) {
+		this.pages = pages;
 	}
 
 	public Integer getChapters() {
