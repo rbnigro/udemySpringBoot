@@ -10,25 +10,24 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ronneynigro.bookstoremanager.dto.BookDTO;
 import com.ronneynigro.bookstoremanager.dto.MessageResponseDTO;
-import com.ronneynigro.bookstoremanager.repository.BookRepository;
 import com.ronneynigro.bookstoremanager.service.BookService;
 
 @RestController
 @RequestMapping("/api/v1/books")
 public class BookController {
-	
+	 
 	private BookService bookService;
 	
 	@Autowired
 	public BookController(BookService bookService) {
-		this.bookService = bookService;
+		this.bookService = bookService; 
 	}
 	
 	@PostMapping
 	public MessageResponseDTO create(@RequestBody @Valid BookDTO bookDTO) {
 		//return bookService.create(bookDTO);
 		return MessageResponseDTO.builder()
-				.message("criou")
+				.message("Book criado com o id: [" + bookDTO.getId() + "]")
 				.build();
 	}
 }
