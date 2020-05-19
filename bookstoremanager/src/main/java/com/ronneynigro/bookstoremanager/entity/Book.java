@@ -18,8 +18,8 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class Book {
 
 	@Id
